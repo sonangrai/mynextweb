@@ -12,6 +12,12 @@ function MyApp({ Component, pageProps }) {
           href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;600&display=swap"
           rel="stylesheet"
         />
+        <link
+          rel="icon"
+          href="https://res.cloudinary.com/drqgginx9/image/upload/v1627784399/logo_kwwrgy.png"
+          type="image/png"
+          sizes="16x16"
+        ></link>
       </Head>
       <Sidebar />
       <Component {...pageProps} />
