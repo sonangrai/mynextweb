@@ -4,7 +4,7 @@ import "../styles/main.scss";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <>
+    <div className="sonangApp">
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" c />
@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <Sidebar />
       <Component {...pageProps} />
-    </>
+    </div>
   );
 }
 

@@ -1,0 +1,5 @@
+@use "../../styles/splitter.scss" as *;
+
+.main {
+  width: calc(100% - 300px);
+}

@@ -3,4 +3,12 @@ body {
   font-family: "Raleway", sans-serif;
   font-weight: 400;
   font-size: 18px;
+  margin: 0;
+}
+* {
+  box-sizing: border-box;
+}
+.sonangApp {
+  display: flex;
+  justify-content: space-between;
 }
