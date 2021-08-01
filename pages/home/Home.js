@@ -5,12 +5,14 @@ import styles from "./Home.module.scss";
 const Home = ({ datas }) => {
   return (
     <main className={styles.main}>
-      {datas &&
-        datas.map((d) => (
-          <div className={styles.blogItem} key={d.id}>
-            <BlogCard data={d} />
-          </div>
-        ))}
+      <div className={styles.b_row}>
+        {datas &&
+          datas.map((d) => (
+            <div className={styles.blogItem} key={d.id}>
+              <BlogCard data={d} />
+            </div>
+          ))}
+      </div>
     </main>
   );
 };

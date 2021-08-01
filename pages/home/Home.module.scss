@@ -2,4 +2,11 @@
 
 .main {
   width: calc(100% - 300px);
+  .b_row {
+    display: flex;
+    flex-wrap: wrap;
+    .blogItem {
+      width: calc(100% / 3);
+    }
+  }
 }
