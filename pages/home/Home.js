@@ -1,10 +1,16 @@
 import React from "react";
+import BlogCard from "../../components/card/BlogCard";
 import styles from "./Home.module.scss";
 
-const Home = () => {
+const Home = ({ datas }) => {
   return (
     <main className={styles.main}>
-      <i className="fad fa-hashtag"></i> Home
+      {datas &&
+        datas.map((d) => (
+          <div className={styles.blogItem} key={d.id}>
+            <BlogCard data={d} />
+          </div>
+        ))}
     </main>
   );
 };
