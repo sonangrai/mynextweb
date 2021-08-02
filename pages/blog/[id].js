@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./SIngle.module.scss";
 
 export const getStaticPaths = async () => {
   const res = await fetch(`${process.env.BASE_API}/posts`);
@@ -28,9 +29,9 @@ export const getStaticProps = async (context) => {
 
 const Blog = (data) => {
   return (
-    <div className={StyleSheet.blogPage}>
+    <div className={styles.blogPage}>
       <div
-        className={StyleSheet.blogTitle}
+        className={styles.blogTitle}
         dangerouslySetInnerHTML={{ __html: data.title.rendered }}
       />
     </div>
