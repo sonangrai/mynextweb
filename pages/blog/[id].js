@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./SIngle.module.scss";
+import styles from "./Single.module.scss";
 
 export const getStaticPaths = async () => {
   const res = await fetch(`${process.env.BASE_API}/posts`);
