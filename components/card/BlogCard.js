@@ -8,13 +8,22 @@ const BlogCard = ({ data }) => {
     <div className={styles.blogCard}>
       <Link href={`/blog/${data.id}`}>
         <a>
-          <img src={data.featured_image_url} alt={data.title.rendered} />
-          <div className={styles.overBoard}>
+          <div className={styles.cardLf}>
             <div className={styles.top}>
-              <span className={styles.cat}>{data.post_categories[0].name}</span>
               <span className={styles.date}>{DateFormatter(data.date)}</span>
+              <span className={styles.cat}>{data.post_categories[0].name}</span>
             </div>
-            <div className={styles.title}>{data.title.rendered}</div>
+            <div
+              className={styles.title}
+              dangerouslySetInnerHTML={{ __html: data.title.rendered }}
+            />
+            <div
+              className={styles.excerpt}
+              dangerouslySetInnerHTML={{ __html: data.excerpt.rendered }}
+            />
+          </div>
+          <div className={styles.cardRt}>
+            <img src={data.featured_image_url} alt={data.title.rendered} />
           </div>
         </a>
       </Link>

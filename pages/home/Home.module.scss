@@ -6,7 +6,8 @@
     display: flex;
     flex-wrap: wrap;
     .blogItem {
-      width: calc(100% / 3);
+      width: 100%;
+      padding: 2em 8em;
     }
   }
 }
