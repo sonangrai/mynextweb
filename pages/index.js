@@ -3,7 +3,7 @@ import Head from "next/head";
 import Home from "./home/Home";
 
 export const getStaticProps = async () => {
-  const res = await fetch(`${process.env.BASE_API}/posts`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/posts`);
   const data = await res.json();
 
   if (!data) {

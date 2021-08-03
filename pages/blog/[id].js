@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Single.module.scss";
 
 export const getStaticPaths = async () => {
-  const res = await fetch(`${process.env.BASE_API}/posts`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/posts`);
   const datas = await res.json();
 
   const paths = datas.map((post) => {
@@ -19,7 +19,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const id = context.params.id;
-  const res = await fetch(`${process.env.BASE_API}/posts/${id}`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/posts/${id}`);
   const data = await res.json();
 
   return {
