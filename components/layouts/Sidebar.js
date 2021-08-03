@@ -4,6 +4,7 @@ import styles from "./Sidebar.module.scss";
 
 const Sidebar = () => {
   const [categories, setcategories] = useState();
+  const [loading, setloading] = useState(false);
 
   const getCats = async () => {
     const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/categories`);
@@ -13,8 +14,10 @@ const Sidebar = () => {
     }
   };
   useEffect(() => {
+    setloading(true);
     getCats().then((res) => {
       setcategories(res);
+      setloading(false);
     });
     return () => {};
   }, []);
@@ -22,25 +25,33 @@ const Sidebar = () => {
   return (
     <div className={styles.sidebarCont}>
       <div className={styles.logo}>
-        <img
-          src="https://res.cloudinary.com/drqgginx9/image/upload/v1627784399/logo_kwwrgy.png"
-          alt="logo"
-        />
+        <Link href="/">
+          <a>
+            <img
+              src="https://res.cloudinary.com/drqgginx9/image/upload/v1627784399/logo_kwwrgy.png"
+              alt="logo"
+            />
+          </a>
+        </Link>
       </div>
       <div className={styles.nav}>
-        {categories ? (
-          categories.map((cat) => (
-            <div key={cat.id} className={styles.link}>
-              <Link href={`/category/${cat.name}`}>
-                <a>
-                  <span className={styles.catName}>{cat.name}</span>
-                  <sup className={styles.count}>{cat.count}</sup>
-                </a>
-              </Link>
-            </div>
-          ))
+        {!loading ? (
+          categories ? (
+            categories.map((cat) => (
+              <div key={cat.id} className={styles.link}>
+                <Link href={`/category/${cat.name}`}>
+                  <a>
+                    <span className={styles.catName}>{cat.name}</span>
+                    <sup className={styles.count}>{cat.count}</sup>
+                  </a>
+                </Link>
+              </div>
+            ))
+          ) : (
+            <>No Cat</>
+          )
         ) : (
-          <>No Cat</>
+          <>Loading</>
         )}
       </div>
     </div>

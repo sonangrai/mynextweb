@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" c />
         <link
-          href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;600&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;600;700&display=swap"
           rel="stylesheet"
         />
         <link
@@ -18,6 +18,21 @@ function MyApp({ Component, pageProps }) {
           type="image/png"
           sizes="16x16"
         ></link>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-8NXDWFFPBS"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8NXDWFFPBS');
+`,
+          }}
+        />
       </Head>
       <Sidebar />
       <Component {...pageProps} />

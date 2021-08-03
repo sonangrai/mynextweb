@@ -1,1 +1,36 @@
 @use "../../styles/splitter.scss" as *;
+
+.blogPage {
+  padding: 3em;
+  width: calc(100vw - 300px);
+  .topper {
+    .tag {
+      font-size: 0.8em;
+      display: inline-block;
+      padding: 0.5em;
+      background-color: $primary-color;
+      color: #fff;
+      border-radius: 4px;
+      text-transform: uppercase;
+      font-weight: $font-bold;
+    }
+    .blogTitle {
+      font-size: 2em;
+      margin: 0.4em 0;
+      font-weight: $font-bolder;
+    }
+    .excerpt {
+      font-weight: $font-bold;
+    }
+  }
+  .featuredImg {
+    img {
+      width: 100%;
+    }
+  }
+  .body {
+    a {
+      color: $primary-color;
+    }
+  }
+}

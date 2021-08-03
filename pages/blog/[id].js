@@ -1,4 +1,6 @@
+import Head from "next/head";
 import React from "react";
+import DateFormatter from "../../utils/DateFormatter";
 import styles from "./Single.module.scss";
 
 export const getStaticPaths = async () => {
@@ -29,12 +31,32 @@ export const getStaticProps = async (context) => {
 
 const Blog = (data) => {
   return (
-    <div className={styles.blogPage}>
-      <div
-        className={styles.blogTitle}
-        dangerouslySetInnerHTML={{ __html: data.title.rendered }}
-      />
-    </div>
+    <>
+      <Head>
+        <title>{data.title.rendered}</title>
+      </Head>
+      <div className={styles.blogPage}>
+        <div className={styles.topper}>
+          <div className={styles.tag}>{data.post_categories[0].name}</div>
+          <div
+            className={styles.blogTitle}
+            dangerouslySetInnerHTML={{ __html: data.title.rendered }}
+          />
+          <div
+            className={styles.excerpt}
+            dangerouslySetInnerHTML={{ __html: data.excerpt.rendered }}
+          />
+          <div className={styles.date}>{DateFormatter(data.date)}</div>
+        </div>
+
+        <div className={styles.featuredImg}>
+          <img src={data.featured_image_url} alt={data.title.rendered} />
+        </div>
+        <div className={styles.body}>
+          <div dangerouslySetInnerHTML={{ __html: data.content.rendered }} />
+        </div>
+      </div>
+    </>
   );
 };
 
