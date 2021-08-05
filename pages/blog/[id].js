@@ -42,10 +42,7 @@ const Blog = (data) => {
           content={data.yoast_head_json.description}
         />
         <meta property="og:site_name" content={data.yoast_head_json.title} />
-        <meta
-          property="og:image"
-          content={data.yoast_head_json.og_image[0].url}
-        />
+        <meta property="og:image" content={data.featured_image_url} />
         <meta property="twitter:card" content="summary" />
         <meta property="twitter:title" content={data.yoast_head_json.title} />
         <meta
