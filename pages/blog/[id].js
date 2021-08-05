@@ -34,6 +34,20 @@ const Blog = (data) => {
     <>
       <Head>
         <title>{data.title.rendered}</title>
+        <meta name="description" content={data.yoast_head_json.description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={data.yoast_head_json.title} />
+        <meta
+          property="og:description"
+          content={data.yoast_head_json.description}
+        />
+        <meta property="og:site_name" content={data.yoast_head_json.title} />
+        <meta property="twitter:card" content="summary" />
+        <meta property="twitter:title" content={data.yoast_head_json.title} />
+        <meta
+          property="twitter:description"
+          content={data.yoast_head_json.description}
+        />
       </Head>
       <div className={styles.blogPage}>
         <div className={styles.topper}>
